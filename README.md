@@ -8,11 +8,8 @@ This microservice exists to provide utilities for dealing with URIs:
 ## Direct usage in [Storyscript](https://storyscript.io/):
 
 ```coffee
->>> pandoc convert doc:'https://github.com/'
-{"uri": "https://github.com/", "scheme": "https", "userinfo": null, "host": "github.com", "path": "/", "query": null, "?": {}, "fragment": null, "netloc": "github.com"}
-
->>> uritool query uri:'https://httpbin.org/get?hello=world'
-{"hello": "world"}
+>>> pandoc convert doc:'# hi' format:'markdown' output:'html'
+'<p>hi</p>\n'
 ```
 
 Curious to [learn more](https://docs.storyscript.io/)?
