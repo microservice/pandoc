@@ -1,0 +1,40 @@
+actions:
+  convert:
+    arguments:
+      doc:
+        in: requestBody
+        required: true
+        type: string
+      format:
+        in: query
+        required: true
+        type: string
+      output:
+        in: query
+        required: true
+        type: string
+    help: |
+      Converts a document, using Pandoc.
+    http:
+      method: post
+      path: /convert
+      port: 8080
+    output:
+      type: string
+info:
+  contact:
+    email: me@kennethreitz.org
+    name: Kenneth Reitz
+    url: https://kennethreitz.org/
+  description: A Pandoc microservice.
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  title: Pandoc
+  version: 0.1.0
+lifecycle:
+  startup:
+    command:
+    - python3
+    - /app/service.py
+omg: 1
