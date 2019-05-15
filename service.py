@@ -31,10 +31,16 @@ def convert(doc: str, format: str, *, output: str) -> str:
     with open(tf, 'w') as f:
         f.write(doc)
 
-    c = delegator.run(f'pandoc --from={format} --to={output} {tf}')
+    valid_input = delegator.run('pandoc --list-input-formats').out.split()
+    valid_output = delegator.run('pandoc --list-output-formats').out.split()
+
+    assert format in valid_input
+    assert output in valid_output
+
+    p = delegator.run(f'pandoc --from={format} --to={output} {tf}')
     os.remove(tf)
 
-    return c.out
+    return p.out
 
 
 if __name__ == '__main__':
