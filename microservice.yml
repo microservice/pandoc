@@ -1,3 +1,20 @@
+omg: 1
+lifecycle:
+  startup:
+    command:
+    - python3
+    - /app/service.py
+info:
+  contact:
+    email: me@kennethreitz.org
+    name: Kenneth Reitz
+    url: https://kennethreitz.org/
+  description: A Pandoc microservice.
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  title: Pandoc
+  version: 0.1.1
 actions:
   convert:
     arguments:
@@ -21,20 +38,4 @@ actions:
       port: 8080
     output:
       type: string
-info:
-  contact:
-    email: me@kennethreitz.org
-    name: Kenneth Reitz
-    url: https://kennethreitz.org/
-  description: A Pandoc microservice.
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
-  title: Pandoc
-  version: 0.1.1
-lifecycle:
-  startup:
-    command:
-    - python3
-    - /app/service.py
-omg: 1
+
