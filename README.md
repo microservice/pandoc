@@ -1,9 +1,9 @@
-# Pandoc Microservice
+# _Pandoc_ OMG Microservice
 
-This microservice exists to provide utilities for dealing with URIs:
+[![Open Microservice Guide](https://img.shields.io/badge/OMG%20Enabled-👍-green.svg?)](https://microservice.guide)
+<!-- [![Docker Build Status](https://img.shields.io/docker/build/microservices/pandoc.svg?style=for-the-badge)](https://hub.docker.com/r/microservices/pandoc/) -->
 
-![Microservice](https://img.shields.io/badge/microservice-ready-brightgreen.svg?style=for-the-badge)
-[![Docker Build Status](https://img.shields.io/docker/build/microservices/pandoc.svg?style=for-the-badge)](https://hub.docker.com/r/microservices/pandoc/)
+This microservice exists to provide utilities for dealing with URIs.
 
 ## Direct usage in [Storyscript](https://storyscript.io/):
 
@@ -15,3 +15,15 @@ This microservice exists to provide utilities for dealing with URIs:
 Curious to [learn more](https://docs.storyscript.io/)?
 
 ✨🍰✨
+
+## Usage with [OMG CLI](https://www.npmjs.com/package/omg)
+
+##### Convert
+```shell
+$ omg run convert -a doc=<DOCUMENT> -a format=<FORMAT> -a output=<OUTPUT>
+```
+
+**Note**: The OMG CLI requires [Docker](https://docs.docker.com/install/) to be installed.
+
+## License
+[MIT License](https://github.com/omg-services/pandoc/blob/master/LICENSE).
