@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - '12'
+
+services:
+  - docker
+
+before_install:
+  - npm i @microservices/cli
+
+script:
+  - npx oms build
+  - |
+    output="$(npx oms run --silent convert \
+    -a doc='https://oms.hudson.dev/fixtures/math.text' \
+    -a format='latex' \
+    -a output='markdown'| jq -c .)"
+    if [ "$output" != '"$a^2 + b^2 = c^2$\n\n$v(t) = v_0 + \\frac{1}{2}at^2$\n\n$\\gamma = \\frac{1}{\\sqrt{1 - v^2/c^2}}$\n\n$\\exists x \\forall y (Rxy \\equiv Ryx)$\n\n$p \\wedge q \\models p$\n\n$\\Box\\diamond p\\equiv\\diamond p$\n\n$\\int_{0}^{1} x dx = \\left[ \\frac{1}{2}x^2 \\right]_{0}^{1} = \\frac{1}{2}$\n\n$e^x = \\sum_{n=0}^\\infty \\frac{x^n}{n!} = \\lim_{n\\rightarrow\\infty} (1+x/n)^n$\n"' ] ; then echo "$output"; exit 1; fi
